@@ -5,8 +5,11 @@
             <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">Neki link</a>
+<<<<<<< HEAD
             <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">Admin</a>
+=======
+>>>>>>> 01b041ef0dae38ce0917ec67403fb051e20b7279
             <a class="nav-link" href="#">About</a>
 
         </nav>
