@@ -5,7 +5,6 @@
             <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">Neki link</a>
-            <a class="nav-link" href="#">Neki link</a>
             <a class="nav-link" href="#">About</a>
         </nav>
     </div>
