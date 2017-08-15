@@ -1,25 +1,28 @@
-<html>
-<title>
-    <h1>
-        Naslov
-    </h1>
-</title>
-<body>
+@extends ('layouts.master')
 
-<h1>Neobjavljeni blogovi</h1>
-<ul>
+    @section ('title')
 
-    @foreach($posts as $post)
+    Blogovi
 
-        <li>
-            <p>
-                <a href="/posts/{{$post->id}}">{{$post->title}}</a>
-            </p>
-        </li>
+@endsection
 
-    @endforeach
+@section('content')
 
-</ul>
+    <h1>Neobjavljeni blogovi</h1>
 
-</body>
-</html>
+    <ul>
+
+        @foreach($posts as $post)
+
+            <li>
+                <p>
+                    <a href="/posts/{{$post->id}}">{{$post->title}}</a>
+                </p>
+            </li>
+
+        @endforeach
+
+    </ul>
+
+
+@endsection
