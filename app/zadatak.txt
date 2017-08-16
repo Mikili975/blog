@@ -1,0 +1,54 @@
+-napraviti novi laravel projekat sa imenom ‘blog’
+-kreirati bazu podataka ‘blog’
+-povezati aplikaciju sa bazom podataka preko .env fajla
+-izgenerisati migraciju za posts tabelu (id, title, body, timestamps)
+-‘Ubaciti’ nekoliko test post-ova
+-Izgenerisati model Post - artisan make:model
+-Napraviti 2 stranice - all posts i single post po ugledu na prethodne dane
+-Svu interakciju sa bazom uraditi preko modela (all(), find($id))
+-Obrisati migraciju za posts tabelu i Post model
+-Napraviti model i migraciju uz pomoc jedne komande: artisan make:model Post -m
+-U migraciji dodati (pored gore pomenutih polja) ‘published’ polje tipa boolean
+-Pokrenuti migracije
+-‘Ubaciti’ nekoliko test post-ova
+-Na modelu Post napraviti metod koji ce vracati published i drugi metod koji ce vracati unpublished post-ove - return self::where(‘published’, 1)->get()
+-Izgenerisati PostsController - artisan make:controller PostsController
+-Izmeniti rute da idu preko kontrolera
+  -Svi postovi - ‘PostsController@index’
+  -Single post - ‘PostsController@show’
+-Dodati odgovarajuce metode u kontroler - inde) i show()
+- Prebaciti logiku iz ruta koje smo dosad koristili u odgovarajuce metode kontrolera
+
+
+- Napraviti novi folder unutar ‘views’ foldera sa imenom ‘layouts’
+- U novokreiranom folderu napraviti novi blade fajl - master.blade.php
+- Sadrzaj tog fajla - najbazicniji html sa ,  i <body> tag-ovima
+- U okviru <body> tagova, dodati @yield(‘content’) blade-ovu direktivu
+- Izmeniti posts.index i posts.show view-ove da ‘extenduju’ master view:
+    @extends(‘layouts.master’)
+    @section(‘content’)
+    U okviru section-a umetnuti nas html koji ispisuje postove/jedan post
+
+- Posetiti twitter bootstrap (verzija 4) sajt (https://v4-alpha.getbootstrap.com/)
+- Examples sekcija - blog example
+- View-source -> iskopirati citav sadrzaj i ubaciti u nas master.blade.php fajl umesto postojeceg html-a
+- Pri dnu koda obrisati sekciju ‘Bootstrap core JavaScript’, sve do tag-a
+- Naci u bootstrap-ovoj dokumentaciji https://v4-alpha.getbootstrap.com/getting-started/introduction/#quick-start
+link do CDN-a koji host-uje osnovni (core) bootstrap css.
+- Iskopirati taj link i umetnuti ga u nas novi master.blade.php ispod komentara
+
+
+- Create post form- Registrovati  novu rutu (/posts/create) i stranicu za form-u-
+- Na Twitter bootsrap sajtu naci primer html form-e (sekcija ‘css’)- Iskopirati i ubaciti u nas novi view posts.create-
+- Izmeniti form-u da ima samo 2 polja koja nam trebaju - title i body-
+- Za form method postaviti ‘POST’ a za action ‘/posts’-
+- Registrovati novu rutu (Route::post) koja ce biti odgovorna za procesuiranje form-e-
+- Dodati odgovarajuci metod u kontroler-
+- Probajte da resite csrf exception uz pomoc dokumentacije
+- $post = New Post;  $post->title = request(‘title’); $post->save();- Dodati redirekciju na kraju metoda - return redirect(‘/posts’)
+- Validation- U kontroler, pre kreiranja post-a, dodati validaciju
+$this->validate(request(),
+- [‘title’ => ‘required’]) - za sva polja odraditi-
+- Na view-u koji drzi form-u dodati html za prikaz greski
+foreach($errors->all() as $error)    {{ $error }}-
+- Izdvojiti greske u partial view

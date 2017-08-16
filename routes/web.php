@@ -15,8 +15,11 @@ use App\Post;
 
 Route::get('/', 'PostsController@index');
 
+Route::get('/posts/create', 'PostsController@create');
+
 Route::get('/posts/{id}', 'PostsController@show');
 
 Route::get('/published', 'PostsController@publishedBlogs');
 
 Route::get('/unpublished', 'PostsController@unpublishedBlogs');
+

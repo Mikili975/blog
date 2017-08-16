@@ -38,4 +38,11 @@ class PostsController extends Controller
 
         return view('posts.unpublished', compact('posts'));
     }
+
+    public function create()
+    {
+
+        return view('posts.create');
+
+    }
 }

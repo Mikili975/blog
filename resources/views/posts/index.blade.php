@@ -24,5 +24,4 @@
 
     </ul>
 
-
 @endsection
