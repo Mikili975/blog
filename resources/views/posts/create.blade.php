@@ -10,25 +10,28 @@
 
     <div class="container">
 
-        <form class="form-signin">
+        <form action="/posts" method="post"  class="form-signin">
+            <h2 class="form-signin-heading">Napisi blog</h2>
 
-            <h2 class="form-signin-heading">Napisi novi blog</h2>
+            {!! Form::token() !!}
 
+            <br>
 
+            <label for="inputTitle" class="sr-only">Naslov</label>
+            <input type="text" id="inputTitle" class="form-control" placeholder="Naslov" required autofocus>
 
+            <br>
 
-            <div class="checkbox">
+            <label for="inputBody" class="sr-only">Sadrzaj</label>
+            <textarea type="text" id="inputBody" class="form-control" placeholder="Blog" rows="5" cols="40" required></textarea>
 
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+            <br>
 
-            </div>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
+            <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
         </form>
 
     </div> <!-- /container -->
+
+    <br>
 
 @endsection
