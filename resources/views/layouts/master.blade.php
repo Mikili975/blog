@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="/css/blog.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,13 +33,13 @@
 
         <div class="col-sm-8 blog-main">
 
-            <div class="blog-post">
+
 
                 {{-- Ovde sve sto treba vuces iz baze--}}
 
                 @yield ('content')
 
-            </div><!-- /.blog-post -->
+
 
             @include ('layouts.partials.blog-pagination')
 

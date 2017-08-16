@@ -46,9 +46,11 @@ class PostsController extends Controller
 
     }
 
-    public function writeBlog()
+    public function store()
     {
-        dd('"tu sam!"');
+        //dd($_POST);
+        //dd(Request::all());
+        dd(request('title'));
         //return ;
 
     }

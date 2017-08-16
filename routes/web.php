@@ -23,5 +23,5 @@ Route::get('/published', 'PostsController@publishedBlogs');
 
 Route::get('/unpublished', 'PostsController@unpublishedBlogs');
 
-Route::post('/posts', 'PostsController@writeBlog');
+Route::post('/posts', 'PostsController@store');
 

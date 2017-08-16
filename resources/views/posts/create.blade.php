@@ -10,22 +10,17 @@
 
     <div class="container">
 
+        <h2 class="form-signin-heading">Napisi blog</h2>
+
         <form action="/posts" method="post"  class="form-signin">
-            <h2 class="form-signin-heading">Napisi blog</h2>
 
-            {!! Form::token() !!}
-
-            <br>
+            {{ csrf_field() }}
 
             <label for="inputTitle" class="sr-only">Naslov</label>
-            <input type="text" id="inputTitle" class="form-control" placeholder="Naslov" required autofocus>
-
-            <br>
+            <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Naslov" >
 
             <label for="inputBody" class="sr-only">Sadrzaj</label>
-            <textarea type="text" id="inputBody" class="form-control" placeholder="Blog" rows="5" cols="40" required></textarea>
-
-            <br>
+            <textarea name="body" id="inputBody" class="form-control" placeholder="Blog" rows="5" cols="40" ></textarea>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
         </form>
