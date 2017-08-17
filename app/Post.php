@@ -20,6 +20,8 @@ class Post extends Model
         return static::where('published', '0')->get();
 
     }
+
+
 }
 
 

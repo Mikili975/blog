@@ -25,7 +25,7 @@
 
 @include ('layouts.partials.blog-header')
 
-
+{{--@include ('layouts.partials.errors')--}}
 
 <div class="container">
 

@@ -8,7 +8,13 @@
 
 @section('content')
 
+
+    @includeWhen($errors->any(), 'posts.error')
+
+
+
     <div class="container">
+
 
         <h2 class="form-signin-heading">Napisi blog</h2>
 

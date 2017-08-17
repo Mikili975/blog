@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Post;
 
 class PostsController extends Controller
@@ -42,16 +43,30 @@ class PostsController extends Controller
     public function create()
     {
 
-        return view('posts.create');
+        return view('posts.create', compact('request'));
 
     }
 
-    public function store()
+    public function store( Request $request )
     {
-        //dd($_POST);
-        //dd(Request::all());
-        dd(request('title'));
-        //return ;
 
+        $this->validate( $request, [ 'title' => 'required', 'body' => 'required' ] );
+
+        $post = new Post;
+
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->author = 'Mickey';  // Za sada je author hardcoded, dok ne resimo vezu sa tabelom users
+        $post->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
+
+        /* Moze i ovako, ali je ovo ispod verovatno bolje...
+
+           DB::insert('insert into posts (title, body, author, published) values (?, ?, ?, ?)',
+                            [$post->title, $post->body, $post->author, $post->published]);
+        */
+
+        $post->save();
+
+        return redirect('/posts/create');
     }
 }
