@@ -204,3 +204,10 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+/* Comments */
+.blog-comments {
+    margin-bottom: 3rem;
+}
+.blog-comments > .btn {
+    border-radius: 2.5rem;
+}
