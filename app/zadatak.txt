@@ -52,3 +52,19 @@ $this->validate(request(),
 - Na view-u koji drzi form-u dodati html za prikaz greski
 foreach($errors->all() as $error)    {{ $error }}-
 - Izdvojiti greske u partial view
+
+Comments
+- Napraviti model i migraciju za komentare
+- Dodati ‘rucno’ par komentara
+- pokrrenuti php artisan tinker i proveriti da li su komentari kreirani
+- Napraviti relacije izmedju modela Post i Comment-Post
+- return $this->hasMany(Comment::class);-Comment
+- return $this->belongsTo(Post::class);
+- Na single post stranici ispisati komentare vezane za taj post   $post->comments as $comment
+- Ispod komentara dodati form-u na kojoj korisnik moze da ostavi komentar
+- Textarea + submit dugme (kod o ugledu na form-u za kreiranje post-a)
+- Obavezno izgenerisati novi CommentsController koji ce biti zaduzen za procesuiranje form-e
+- Prvo napraviti da se komentar kreira uz pomoc Comment modela ,
+  a kasnije izmestiti u Post model i iskoristiti relaciju za kreiranje komentara
+- Nakon uspesnog kreiranja redirektovati korisnika na istu stranu
+- Napraviti i validaciju za comments form-u sa greskama
