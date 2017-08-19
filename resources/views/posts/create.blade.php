@@ -9,7 +9,7 @@
 @section('content')
 
 
-    @includeWhen($errors->any(), 'posts.error')
+    {{--@includeWhen($errors->any(), 'posts.error')--}}
 
 
 
@@ -17,6 +17,9 @@
 
 
         <h2 class="form-signin-heading">Napisi blog</h2>
+
+        @include('layouts.partials.errors')
+
 
         <form action="/posts" method="post"  class="form-signin">
 

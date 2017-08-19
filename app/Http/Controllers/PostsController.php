@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Post;
+use App\Comment;
 
 class PostsController extends Controller
 {
@@ -19,6 +20,8 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+
+       /* $comments = Comment::where('post_id',$id)->get();*/
 
 
         return view('posts.show', compact('post'));
@@ -67,6 +70,6 @@ class PostsController extends Controller
 
         $post->save();
 
-        return redirect('/posts/create');
+        return redirect('/');
     }
 }
