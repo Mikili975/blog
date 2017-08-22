@@ -18,6 +18,8 @@
 
     </div>
 
+    @include('layouts.partials.errors')
+    @include('layouts.partials.create-comment',['blogId'=>$post->id])
     @include('layouts.partials.blog-comments')
 
 @endsection
