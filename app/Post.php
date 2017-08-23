@@ -14,6 +14,22 @@ class Post extends Model
 
     }
 
+    public function addComment($request)
+    {
+        // iskoristis relaciju ka komentarima i da snimis jedna komentar
+
+        /*dd($request->all());*/
+        /*$comment  = new Comment([
+            'user' => $request->user,
+            'body' => $request->body]);*/
+
+        $this->comments()->create([
+            'user' => $request->user,
+            'body' => $request->body
+        ]);
+
+    }
+
     public static function published()
     {
 

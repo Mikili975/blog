@@ -25,5 +25,5 @@ Route::get('/unpublished', 'PostsController@unpublishedBlogs');
 
 Route::post('/posts', 'PostsController@store');
 
-Route::post('/comments', 'PostsController@storeComment');
+Route::post('posts/{post}/comments', 'PostsController@storeComment');
 

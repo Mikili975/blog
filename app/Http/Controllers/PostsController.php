@@ -24,7 +24,7 @@ class PostsController extends Controller
        /* $comments = Comment::where('post_id',$id)->get();*/
 
 
-        return view('posts.show', compact('post'));
+        return view('posts.sqhow', compact('post'));
     }
 
     public function publishedBlogs()
@@ -73,33 +73,23 @@ class PostsController extends Controller
         return redirect('/');
     }
 
-    public function storeComment( Request $request )
+    public function storeComment( Post $post )
     {
 
-        $this->validate( $request, [ 'user' => 'required', 'body' => 'required' ] );
+        $this->validate( request(), [ 'user' => 'required', 'body' => 'required' ] );
 
-        $comment = new Comment();
+        /*$comment = new Comment();
 
         $comment->user = request('user');
         $comment->body = request('body');
         $comment->post_id = request('post_id');
 
-        /*dd($comment);*/
+        $comment->save();*/
 
-        /*$post->title = request('title');
-        $post->body = request('body');
-        $post->author = 'Mickey';  // Za sada je author hardcoded, dok ne resimo vezu sa tabelom users
-        $post->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished*/
 
-        /* Moze i ovako, ali je ovo ispod verovatno bolje...
+        $post->addComment(request());
 
-           DB::insert('insert into posts (title, body, author, published) values (?, ?, ?, ?)',
-                            [$post->title, $post->body, $post->author, $post->published]);
-        */
-
-        $comment->save();
-
-        return redirect('/posts/'.$comment->post_id);
+        return redirect('/posts/'.$post->id);
         /*return redirect('/');*/
     }
 }

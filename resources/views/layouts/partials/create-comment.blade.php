@@ -1,10 +1,8 @@
 {{--{{dd($blogId)}}--}}
 <h6>Unesi komentar</h6>
-<form action="/comments" method="post"  class="create_comment">
+<form action="/posts/{{$post->id}}/comments" method="post"  class="create_comment">
 
     {{ csrf_field() }}
-
-    <input type="hidden" name="post_id" value={{$blogId}}>
 
     <label for="inputName" class="sr-only">Ime</label>
     <input type="text" name="user" id="inputTitle" class="form-control" placeholder="Ime" >
