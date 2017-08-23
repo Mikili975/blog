@@ -24,7 +24,7 @@ class PostsController extends Controller
        /* $comments = Comment::where('post_id',$id)->get();*/
 
 
-        return view('posts.sqhow', compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     public function publishedBlogs()
