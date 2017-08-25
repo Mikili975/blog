@@ -70,7 +70,7 @@ Comments
 - Napraviti i validaciju za comments form-u sa greskama
 
 VEZBA 1 - REGISTRACIJA
--Otvoriti migraciju za kreiranje korisnika (već napravljena).
+- Otvoriti migraciju za kreiranje korisnika (već napravljena).
 - Proći zajedno sa kandidatima ispitujući ih, da obnove gradivo vezano za ovaj deo
 - Dodati `get` rutu-`php artisan make:controller RegisterController`
 - Dodati `create` akciju-Kreirati view fajl. Ok je kopirati posts/create fajl radi bržeg rada i izmeniti potrebno (ako je predavaču tako lakše)
