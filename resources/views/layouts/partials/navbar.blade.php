@@ -6,7 +6,7 @@
             <a class="nav-link" href="/unpublished">Unpublished</a>
             <a class="nav-link" href="/posts/create">Napisi blog</a>
             <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="/users/register">Login</a>
+            <a class="nav-link" href="/users/register">Login/Register</a>
         </nav>
     </div>
 </div>

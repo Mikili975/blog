@@ -15,6 +15,11 @@ class RegisterController extends Controller
 
     public function store(User $user)
     {
-        dd($user);
+        dd($user, request());
+    }
+
+    public function login(User $user)
+    {
+        dd($user, request());
     }
 }

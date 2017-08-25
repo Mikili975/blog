@@ -2,7 +2,7 @@
 
 @section ('title')
 
-    Napisi blog
+    Prijava
 
 @endsection
 
@@ -15,33 +15,51 @@
 
     <div class="container">
 
-
-        <h2 class="form-signin-heading">Napisi blog</h2>
+        <h4 class="form-signin-heading">Postojeci korisnik</h4>
 
         @include('layouts.partials.errors')
 
 
-        <form action="/user/store" method="post"  class="form-signin">
+        <form action="/users/login" method="post"  class="form-signin">
+
+            {{ csrf_field() }}
+
+            <label for="inputUsername" class="sr-only">Prezime</label>
+            <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+
+            <label for="inputPassword" class="sr-only">Sifra</label>
+            <input type="password" name="password" id="inputTitle" class="form-control" placeholder="Sifra" >
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
+        </form>
+
+
+        <h4 class="form-signin-heading">Novi korisnik</h4>
+
+        @include('layouts.partials.errors')
+
+
+        <form action="/users/store" method="post"  class="form-signin">
 
             {{ csrf_field() }}
 
             <label for="inputFirstName" class="sr-only">Ime</label>
-            <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Ime" >
+            <input type="text" name="firstName" id="inputTitle" class="form-control" placeholder="Ime" >
 
             <label for="inputLastName" class="sr-only">Prezime</label>
-            <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Prezime" >
+            <input type="text" name="lastName" id="inputTitle" class="form-control" placeholder="Prezime" >
 
             <label for="inputUsername" class="sr-only">Prezime</label>
-            <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+            <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
 
-            <label for="inputFirstName" class="sr-only">e-mail</label>
-            <input type="email" name="title" id="inputTitle" class="form-control" placeholder="e-mail" >
+            <label for="inputEmail" class="sr-only">e-mail</label>
+            <input type="email" name="email" id="inputTitle" class="form-control" placeholder="e-mail" >
 
             <label for="inputPassword" class="sr-only">Sifra</label>
-            <input type="password" name="title" id="inputTitle" class="form-control" placeholder="Sifra" >
+            <input type="password" name="password" id="inputTitle" class="form-control" placeholder="Sifra" >
 
             <label for="inputPasswordAgain" class="sr-only">Ponovi sifru</label>
-            <input type="password" name="title" id="inputTitle" class="form-control" placeholder="Ponovi sifru" >
+            <input type="password" name="confirmPassword" id="inputTitle" class="form-control" placeholder="Ponovi sifru" >
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
         </form>
