@@ -25,10 +25,10 @@ Route::get('/unpublished', 'PostsController@unpublishedBlogs');
 
 Route::post('/posts', 'PostsController@store');
 
-Route::post('posts/{post}/comments', 'PostsController@storeComment');
+Route::post('/posts/{post}/comments', 'PostsController@storeComment');
 
 Route::get('/users/register', 'RegisterController@create');
 
 Route::post('/users/login', 'RegisterController@login');
 
-Route::post('users/store', 'RegisterController@store');
+Route::post('/users/store', 'RegisterController@store');
