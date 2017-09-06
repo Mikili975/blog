@@ -70,10 +70,12 @@ Comments
 - Napraviti i validaciju za comments form-u sa greskama
 
 VEZBA 1 - REGISTRACIJA
+
 - Otvoriti migraciju za kreiranje korisnika (već napravljena).
 - Proći zajedno sa kandidatima ispitujući ih, da obnove gradivo vezano za ovaj deo
 - Dodati `get` rutu-`php artisan make:controller RegisterController`
-- Dodati `create` akciju-Kreirati view fajl. Ok je kopirati posts/create fajl radi bržeg rada i izmeniti potrebno (ako je predavaču tako lakše)
+- Dodati `create` akciju-Kreirati view fajl. Ok je kopirati posts/create fajl radi bržeg rada i
+  izmeniti potrebno (ako je predavaču tako lakše)
 - Proveriti da li radi dodata ruta i da li se otvara forma za registraciju
 - Dodati `store` akciju--Validacija--Kreiranje korisnika--Ulogovati korisnika--Redirekcija
 - Dodati rutu za store
@@ -82,3 +84,38 @@ VEZBA 1 - REGISTRACIJA
 - Uraditi uspešnu registraciju
 - Proveriti da li je korisnik dodat u bazi podataka
 - Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+VEZBA 2 - ENKRIPTOVANJE LOZINKE
+
+-Otvoriti bazu podataka i objasniti zašto je loše da na taj način čuvamo podatke
+-Obrisati korisnike iz baze i otvoriti registracionu formu
+-Dodati enkriptovanje
+-Pokazati bazu podataka i kako sad izgleda sačuvana lozinka
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+VEZBA 3 - LOGOUT
+
+-Objasniti zašto je korisnik u ovom trenutku ulogovan
+-`php artisan make:controller LoginController`
+-Dodati rutu za logout
+-Dodati akciju u kontroleru za logout
+-Dodati name u hederu
+-Dodati link u hederu za logout
+-Izvrsiti logout. Dobija se error
+-Dodati uslov na name i logout link da se samo ulogovanim korisnicima to prikazuje
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+VEZBA 4 - LOGIN
+
+-Dodati rute za login (get i post)
+-Dodati akciju create
+-Kreirati view fajl. Ok je kopirati register/create fajl radi bržeg rada i izmeniti potrebno (ako je predavaču tako lakše)
+-Proveriti da li radi dodata ruta i da li se otvara forma za login
+-Dodati akciju store i implementirati login u njoj. Objasniti detaljno sta se desava, sta radi sve attempt funkcija itd.
+-Uraditi pogresan login i izazvati gresku. Napomenuti u kojem delu se ispisuje greska u view fajlu
+-Uraditi dobar login
+-Dodati login link u hederu
+-Ponoviti logout/login
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
