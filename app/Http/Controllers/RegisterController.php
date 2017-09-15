@@ -13,13 +13,38 @@ class RegisterController extends Controller
         return view('/users/create');
     }
 
-    public function store(User $user)
+    public function store()
     {
-        dd($user, request());
+        //validacija
+       /* dd(request());*/
+        $this->validate(
+            request(),
+            [
+                'firstName' => 'required',
+                'lastName' => 'required',
+                'username' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|confirmed',
+            ]
+        );
+
+        // napravi korisnika
+
+        $user = new User();
+
+        $user->name = request('username');
+        $user->email = request('email');
+        $user->password = request('password');
+
+        $user->save();
+
+        //uloguj korisnika
+
+        // redirekcija na home page
     }
 
-    public function login(User $user)
+    public function login()
     {
-        dd($user, request());
+        dd(request());
     }
 }

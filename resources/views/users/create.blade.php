@@ -50,16 +50,16 @@
             <input type="text" name="lastName" id="inputTitle" class="form-control" placeholder="Prezime" >
 
             <label for="inputUsername" class="sr-only">Prezime</label>
-            <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+            <input type="text" name="username" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
 
             <label for="inputEmail" class="sr-only">e-mail</label>
-            <input type="email" name="email" id="inputTitle" class="form-control" placeholder="e-mail" >
+            <input type="text" name="email" id="inputTitle" class="form-control" placeholder="e-mail" >
 
             <label for="inputPassword" class="sr-only">Sifra</label>
             <input type="password" name="password" id="inputTitle" class="form-control" placeholder="Sifra" >
 
             <label for="inputPasswordAgain" class="sr-only">Ponovi sifru</label>
-            <input type="password" name="confirmPassword" id="inputTitle" class="form-control" placeholder="Ponovi sifru" >
+            <input type="password" name="password_confirmation" id="inputTitle" class="form-control" placeholder="Ponovi sifru" >
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
         </form>

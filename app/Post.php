@@ -16,7 +16,7 @@ class Post extends Model
 
     public function addComment($request)
     {
-        // iskoristis relaciju ka komentarima i da snimis jedna komentar
+        // iskoristis relaciju ka komentarima i da snimis jedan komentar
 
         /*dd($request->all());*/
         /*$comment  = new Comment([
