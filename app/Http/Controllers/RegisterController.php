@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class RegisterController extends Controller
 {
@@ -39,17 +42,34 @@ class RegisterController extends Controller
 
         $user->name = request('username');
         $user->email = request('email');
-        $user->password = request('password');
+        $user->password = Hash::make(request('password'));
 
         $user->save();
 
         //uloguj korisnika
-
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+            // Authentication passed...
+            return redirect('/');
+        } else {
+          return 'greska';
+        }
         // redirekcija na home page
     }
 
     public function login()
     {
-        return view('/users/new');
+        if (Auth::attempt(['name' => request('name'), 'password' => request('password')])) {
+            // Authentication passed...
+            return redirect('/');
+        } else {
+            return 'greska';
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/');
     }
 }

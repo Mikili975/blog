@@ -119,3 +119,5 @@ VEZBA 4 - LOGIN
 -Dodati login link u hederu
 -Ponoviti logout/login
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Procitaj middleware iz dokumnetacije

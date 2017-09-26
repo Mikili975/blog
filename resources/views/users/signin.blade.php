@@ -24,7 +24,7 @@
 
             {{ csrf_field() }}
 
-            <label for="inputUsername" class="sr-only">Prezime</label>
+            <label for="inputUsername" class="sr-only">Korisnicko ime</label>
             <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
 
             <label for="inputPassword" class="sr-only">Sifra</label>

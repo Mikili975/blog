@@ -6,7 +6,12 @@
             <a class="nav-link" href="/unpublished">Unpublished</a>
             <a class="nav-link" href="/posts/create">Napisi blog</a>
             <a class="nav-link" href="#">About</a>
+            @if (Auth::user())
+            <a class="nav-link" href="/users/logout">Logout</a>
+            @else
             <a class="nav-link" href="/users/signin">Login</a>
+            @endif
+
         </nav>
     </div>
 </div>

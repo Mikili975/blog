@@ -29,6 +29,8 @@ Route::post('/posts/{post}/comments', 'PostsController@storeComment');
 
 Route::get('/users/signin', 'RegisterController@signin');
 
+Route::get('/users/logout', 'RegisterController@logout');
+
 Route::get('/users/register', 'RegisterController@create');
 
 Route::post('/users/login', 'RegisterController@login');
