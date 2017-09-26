@@ -10,13 +10,18 @@ class RegisterController extends Controller
     //Akcija za kreiranje user-a
     public function create()
     {
-        return view('/users/create');
+        return view('/users/new');
+    }
+
+    public function signin ()
+    {
+        return view('/users/signin');
     }
 
     public function store()
     {
         //validacija
-       /* dd(request());*/
+
         $this->validate(
             request(),
             [
@@ -45,6 +50,6 @@ class RegisterController extends Controller
 
     public function login()
     {
-        dd(request());
+        return view('/users/new');
     }
 }
