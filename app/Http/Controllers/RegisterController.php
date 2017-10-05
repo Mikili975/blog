@@ -16,11 +16,6 @@ class RegisterController extends Controller
         return view('/users/new');
     }
 
-    public function signin ()
-    {
-        return view('/users/signin');
-    }
-
     public function store()
     {
         //validacija
@@ -56,20 +51,5 @@ class RegisterController extends Controller
         // redirekcija na home page
     }
 
-    public function login()
-    {
-        if (Auth::attempt(['name' => request('name'), 'password' => request('password')])) {
-            // Authentication passed...
-            return redirect('/');
-        } else {
-            return 'greska';
-        }
-    }
 
-    public function logout()
-    {
-        Auth::logout();
-
-        return redirect('/');
-    }
 }

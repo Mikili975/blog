@@ -20,7 +20,7 @@
         @include('layouts.partials.errors')
 
 
-        <form action="/users/login" method="post"  class="form-signin">
+        <form action="/check" method="post"  class="form-signin">
 
             {{ csrf_field() }}
 
@@ -34,7 +34,7 @@
         </form>
 
 
-        <h4 class="form-signin-heading">Nemate nalog?  <a href="/users/register">Registrujte se</a></h4>
+        <h4 class="form-signin-heading">Nemate nalog?  <a href="/register">Registrujte se</a></h4>
 
 
     </div> <!-- /container -->

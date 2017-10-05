@@ -7,9 +7,9 @@
             <a class="nav-link" href="/posts/create">Napisi blog</a>
             <a class="nav-link" href="#">About</a>
             @if (Auth::user())
-            <a class="nav-link" href="/users/logout">Logout</a>
+            <a class="nav-link" href="/logout">Logout</a>
             @else
-            <a class="nav-link" href="/users/signin">Login</a>
+            <a class="nav-link" href="/login">Login</a>
             @endif
 
         </nav>

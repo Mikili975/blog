@@ -27,12 +27,12 @@ Route::post('/posts', 'PostsController@store');
 
 Route::post('/posts/{post}/comments', 'PostsController@storeComment');
 
-Route::get('/users/signin', 'RegisterController@signin');
+Route::get('/login', 'LoginController@login');
 
-Route::get('/users/logout', 'RegisterController@logout');
+Route::get('/logout', 'LoginController@logout');
 
-Route::get('/users/register', 'RegisterController@create');
+Route::post('/check', 'LoginController@check');
 
-Route::post('/users/login', 'RegisterController@login');
+Route::get('/register', 'RegisterController@create');
 
-Route::post('/users/store', 'RegisterController@store');
+Route::post('/store', 'RegisterController@store');

@@ -20,7 +20,7 @@
         @include('layouts.partials.errors')
 
 
-        <form action="/users/store" method="post"  class="form-signin">
+        <form action="/store" method="post"  class="form-signin">
 
             {{ csrf_field() }}
 
