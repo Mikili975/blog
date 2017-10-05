@@ -31,7 +31,7 @@ Route::get('/login', 'LoginController@login');
 
 Route::get('/logout', 'LoginController@logout');
 
-Route::post('/check', 'LoginController@check');
+Route::post('/check', 'LoginController@checkCredentials');
 
 Route::get('/register', 'RegisterController@create');
 

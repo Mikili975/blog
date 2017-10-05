@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->only('login');
+
+    }
+
     public function login ()
     {
         return view('/users/login');
@@ -19,7 +25,7 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function check()
+    public function checkCredentials()
     {
         if (Auth::attempt(['name' => request('name'), 'password' => request('password')])) {
             // Authentication passed...

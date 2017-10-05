@@ -10,7 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+    //odradi middleware za registraciju
+
     //Akcija za kreiranje user-a
+
+
     public function create()
     {
         return view('/users/new');

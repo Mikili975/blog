@@ -121,3 +121,55 @@ VEZBA 4 - LOGIN
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
 Procitaj middleware iz dokumnetacije
+
+VEZBA 5 - MIDDLEWARES
+
+-Pokusati pristupiti login i register stranici kao ulogovan korisnik
+-Objasniti da to nije zeljeno ponasanje i da to zelimo da sprecimo u aplikaciji.
+ Zato koristimo middlewares
+-Objasniti sta su middlewares, cemu sluze i gde se koriste
+-Proci kroz listu u Kernel.php. Prikazati sadrzaj Middlewares foldera.
+-Primeniti middlewares u konstruktoru login kontrolera
+-Isprobati login i logout za ulogovane/neulogovane korisnike
+-Primeniti middlewares u konstruktoru register kontrolera
+-Pojavice se redirekcija na ‘home’ stranicu.
+ Izmeniti `RedirectIfAuthenticated` klasu (koju koristi `guest` middleware) da
+ redirektuje na `posts` stranicu
+-Isprobati register za ulogovane/neulogovane korisnike
+-Objasniti da je moguce primeniti middlewares i direktno na rute.
+ Demonstrirati i taj slucaj u jednom primeru ali komitovati sa middlewares u konstruktorima
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+VEZBA 6 - POVEZIVANJE KORISNIKA I POSTOVA
+
+-Imamo situaciju da postovi nisu povezani sa korisnicima, tj. da nije postavljen autor posta. Autor posta treba da bude onaj koji je kreirao post
+-Dodavanje migracije `php artisan make:migration add_author_to_posts_table --table=posts`
+-Objasniti dodavanje kolone i foreign key u postojecu tabelu
+-Na user_id kolonu se postavlja nullable, jer u suprotnom migracija nece proci ako ima postova u tabeli posts (sa ovim dozvoljavamo da postovi nemaju autora). Objasniti ovo
+-Probati i rollback migracije. Objasniti kako funkcionise
+-Dodati postavljanje user_id u PostsController::store akciju
+-Postaviti middlewares u konstruktor PostsController-a. Zabraniti da guest pristupa create i store akcijama
+-Pokusati pristupiti create akciji kao neulogovan korisnik. Aplikacija ce baciti gresku da ne postoji ruta sa imenom ‘login’
+-Na login rutu definisati ime rute. Pokusati opet, aplikacija ce uraditi adekvatnu redirekciju
+-Dodati vezu ka Users modelu u Post model
+-U posts/show i posts/index view fajlovima izmeniti da se umesto ‘Mark’ prikazuje ime korisnika. Ako postoje postovi koji nemaju korisnika, aplikacija ce puci
+-Postaviti rucno korisnika na svaki post ako je potrebno da bi se nastavilo sa radom
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+
+Vežba 7 - Prikaz korisnickih postova
+
+-Zadatak ove vezbe je dodati link ka autoru i prikazati njegove postove na toj stranici
+-`php artisan make:controller UsersController`
+-Dodati get rutu '/users/{id}'
+-Postaviti linkove ka users stranici na posts/index i posts/show stranicama
+-Implementirati show akciju u UsersController
+-Dodati view fajl users/show.blade.php (ako je lakse, kopirati posts/index i doraditi)
+-Pokusati pristupiti stranici korisnika, aplikacija puca jer nije postavljena relacija ka postovima u User modelu
+-Dodati relaciju ka postovima u User modelu
+-Pokrenuti aplikaciju i pristupiti users stranici
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
