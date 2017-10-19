@@ -144,7 +144,7 @@ VEZBA 5 - MIDDLEWARES
 VEZBA 6 - POVEZIVANJE KORISNIKA I POSTOVA
 
 -Imamo situaciju da postovi nisu povezani sa korisnicima, tj. da nije postavljen autor posta. Autor posta treba da bude onaj koji je kreirao post
--Dodavanje migracije `php artisan make:migration add_author_to_posts_table --table=posts`
+-Dodavanje migracije `ddleware
 -Objasniti dodavanje kolone i foreign key u postojecu tabelu
 -Na user_id kolonu se postavlja nullable, jer u suprotnom migracija nece proci ako ima postova u tabeli posts (sa ovim dozvoljavamo da postovi nemaju autora). Objasniti ovo
 -Probati i rollback migracije. Objasniti kako funkcionise
