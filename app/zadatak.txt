@@ -143,17 +143,22 @@ VEZBA 5 - MIDDLEWARES
 
 VEZBA 6 - POVEZIVANJE KORISNIKA I POSTOVA
 
--Imamo situaciju da postovi nisu povezani sa korisnicima, tj. da nije postavljen autor posta. Autor posta treba da bude onaj koji je kreirao post
--Dodavanje migracije `ddleware
+-Imamo situaciju da postovi nisu povezani sa korisnicima, tj. da nije postavljen autor posta.
+ Autor posta treba da bude onaj koji je kreirao post
+-Dodavanje migracije `php artisan make:migration add_author_to_posts_table --table=posts`
 -Objasniti dodavanje kolone i foreign key u postojecu tabelu
--Na user_id kolonu se postavlja nullable, jer u suprotnom migracija nece proci ako ima postova u tabeli posts (sa ovim dozvoljavamo da postovi nemaju autora). Objasniti ovo
+-Na user_id kolonu se postavlja nullable, jer u suprotnom migracija nece proci
+ ako ima postova u tabeli posts (sa ovim dozvoljavamo da postovi nemaju autora). Objasniti ovo
 -Probati i rollback migracije. Objasniti kako funkcionise
 -Dodati postavljanje user_id u PostsController::store akciju
--Postaviti middlewares u konstruktor PostsController-a. Zabraniti da guest pristupa create i store akcijama
--Pokusati pristupiti create akciji kao neulogovan korisnik. Aplikacija ce baciti gresku da ne postoji ruta sa imenom ‘login’
+-Postaviti middlewares u konstruktor PostsController-a.
+ Zabraniti da guest pristupa create i store akcijama
+-Pokusati pristupiti create akciji kao neulogovan korisnik.
+ Aplikacija ce baciti gresku da ne postoji ruta sa imenom ‘login’
 -Na login rutu definisati ime rute. Pokusati opet, aplikacija ce uraditi adekvatnu redirekciju
 -Dodati vezu ka Users modelu u Post model
--U posts/show i posts/index view fajlovima izmeniti da se umesto ‘Mark’ prikazuje ime korisnika. Ako postoje postovi koji nemaju korisnika, aplikacija ce puci
+-U posts/show i posts/index view fajlovima izmeniti da se umesto ‘Mark’ prikazuje ime korisnika.
+ Ako postoje postovi koji nemaju korisnika, aplikacija ce puci
 -Postaviti rucno korisnika na svaki post ako je potrebno da bi se nastavilo sa radom
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
@@ -167,7 +172,8 @@ Vežba 7 - Prikaz korisnickih postova
 -Postaviti linkove ka users stranici na posts/index i posts/show stranicama
 -Implementirati show akciju u UsersController
 -Dodati view fajl users/show.blade.php (ako je lakse, kopirati posts/index i doraditi)
--Pokusati pristupiti stranici korisnika, aplikacija puca jer nije postavljena relacija ka postovima u User modelu
+-Pokusati pristupiti stranici korisnika, aplikacija puca jer nije postavljena relacija
+ ka postovima u User modelu
 -Dodati relaciju ka postovima u User modelu
 -Pokrenuti aplikaciju i pristupiti users stranici
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
