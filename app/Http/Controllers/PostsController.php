@@ -9,6 +9,18 @@ use App\Comment;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' =>
+            [
+                'create',
+                'store'
+            ]
+        ]);
+
+    }
+
     public function index()
     {
         $posts = Post::all();
@@ -59,7 +71,7 @@ class PostsController extends Controller
 
         $post->title = request('title');
         $post->body = request('body');
-        $post->author = 'Mickey';  // Za sada je author hardcoded, dok ne resimo vezu sa tabelom users
+//        $post->author = 'Mickey';  // Za sada je author hardcoded, dok ne resimo vezu sa tabelom users
         $post->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
 
         /* Moze i ovako, ali je ovo ispod verovatno bolje...
