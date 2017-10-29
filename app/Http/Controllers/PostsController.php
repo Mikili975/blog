@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Comment;
@@ -12,7 +13,7 @@ class PostsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest', ['except' =>
+        $this->middleware('auth', ['only' =>
             [
                 'create',
                 'store'
@@ -67,11 +68,13 @@ class PostsController extends Controller
 
         $this->validate( $request, [ 'title' => 'required', 'body' => 'required' ] );
 
+        /*$user->addPost();*/
+
         $post = new Post;
 
         $post->title = request('title');
         $post->body = request('body');
-//        $post->author = 'Mickey';  // Za sada je author hardcoded, dok ne resimo vezu sa tabelom users
+        $post->user_id = Auth::user()->id;
         $post->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
 
         /* Moze i ovako, ali je ovo ispod verovatno bolje...

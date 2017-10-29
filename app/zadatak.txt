@@ -176,6 +176,6 @@ Vežba 7 - Prikaz korisnickih postova
  ka postovima u User modelu
 -Dodati relaciju ka postovima u User modelu
 -Pokrenuti aplikaciju i pristupiti users stranici
--Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovatiq
 
 
