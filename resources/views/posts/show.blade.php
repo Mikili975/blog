@@ -13,7 +13,7 @@
         <h2 class="blog-post-title">{{ $post->title }}</h2>
         <p class="blog-post-meta">
             {{ $post->created_at }}
-            by <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a>
+            by <a href="/users/{{$post->user->name}}">{{$post->user->name}}</a>
         </p>
         <p>{{ substr($post->body, 0, 30) . '...' }}</p>
         <hr>

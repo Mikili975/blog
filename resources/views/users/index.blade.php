@@ -16,7 +16,7 @@
 
             <li>
                 <p>
-                    <a href="/users/{{$user->id}}">{{$user->name}}</a>
+                    <a href="/users/{{$user->name}}">{{$user->name}}</a>
                 </p>
             </li>
 

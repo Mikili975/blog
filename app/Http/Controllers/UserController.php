@@ -22,9 +22,17 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
-    public function show($id)
+    public function show($name)
     {
+        $id = User::where('name',$name)->value('id');
+
         $user = User::find($id);
+
+     //   dd($id);
+
+     //   dd($user);
+
+     //   $user = User::find($name);
 
 
         return view('users.show', compact('user'));

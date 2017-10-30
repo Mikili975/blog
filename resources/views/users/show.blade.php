@@ -19,7 +19,9 @@
 
             <div class="com_comment ">
                 <div class="comName">
-                    <h4>{{$post->title}}</h4>
+                    <h4>
+                        <a href="/posts/{{$post->id}}">{{$post->title}}</a>
+                    </h4>
                     <span>{{$post->updated_at->diffForHumans()}}</span>
                 </div>
 
