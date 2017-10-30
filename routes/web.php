@@ -36,3 +36,7 @@ Route::post('/check', 'LoginController@checkCredentials');
 Route::get('/register', 'RegisterController@create');
 
 Route::post('/store', 'RegisterController@store');
+
+Route::get('/users', 'UserController@index');
+
+Route::get('/users/{id}', 'UserController@show');

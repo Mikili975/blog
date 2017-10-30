@@ -179,3 +179,37 @@ Vežba 7 - Prikaz korisnickih postova
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovatiq
 
 
+
+Vežba 8 - Konfigurisanje email-ova
+
+-Objasniti šta je SMTP server i za šta se koristi
+-Koristiti mailtrap za hvatanje mail-ova
+-Svi kandidati neka se registruju na mailtrap.io
+-Na settings stranici nekog inboxa (na mailtrap.io) se mogu naći podaci (username/password)
+ za autentifikaciju koji treba da se postave u .env fajl
+-Otvoriti config/mail.php fajl, objasniti čemu služi ovaj fajl
+-Objasniti i da se kroz poziv funkcije env (npr. “env('MAIL_DRIVER', 'smtp')”) dobavljaju
+ vrednosti iz .env fajla
+-Objasniti i ‘from’ konfiguraciju
+-U sledecoj vezbi ce se raditi slanje email-ova
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno
+-https://kinsta.com/knowledgebase/free-smtp-server/ Podeliti koristan članak kako da
+ postave besplatno slanje sa gmail account
+
+
+
+Vežba 9 - Slanje email-ova
+
+-Zadatak ove vezbe ce biti slanje mail-a autoru posta kada se doda komentar na post
+-Kreirati mail klasu `php artisan make:mail CommentReceived`
+-Kreirati emails/comment-received.blade.php view fajl
+-Otvoriti klasu CommentReceived i izmeniti da koristi comment-received view fajl
+-U Comments kontroleru dodati slanje CommentReceived emaila autoru.
+ Pri instanciranju mail-a proslediti post kao parametar
+-Doraditi CommentReceived da prima post kao parametar i postaviti ga u post atribut
+-Objasniti da su svi public atributi mail klase automatski dostupni u mail view fajlu
+-Postaviti sadrzaj mail-a
+-Postaviti komentar i pogledati na mailtrap-u da li je pristigao mail
+-Izmeniti “from” u email konfiguracijama
+-Ponovo postaviti komentar i pogledati mail
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati

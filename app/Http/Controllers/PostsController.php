@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Comment;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -68,22 +69,14 @@ class PostsController extends Controller
 
         $this->validate( $request, [ 'title' => 'required', 'body' => 'required' ] );
 
-        /*$user->addPost();*/
+        $user = Auth::user();
 
-        $post = new Post;
+        $user->addPost();
 
-        $post->title = request('title');
-        $post->body = request('body');
-        $post->user_id = Auth::user()->id;
-        $post->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
 
-        /* Moze i ovako, ali je ovo ispod verovatno bolje...
-
-           DB::insert('insert into posts (title, body, author, published) values (?, ?, ?, ?)',
-                            [$post->title, $post->body, $post->author, $post->published]);
-        */
-
-        $post->save();
+//        $post = new Post();
+//
+//        $post->createPost();
 
         return redirect('/');
     }

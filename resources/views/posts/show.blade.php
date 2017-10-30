@@ -11,7 +11,10 @@
     <div class="blog-post">
 
         <h2 class="blog-post-title">{{ $post->title }}</h2>
-        <p class="blog-post-meta">{{ $post->created_at }} by <a href="#">{{$post->user->name}}</a></p>
+        <p class="blog-post-meta">
+            {{ $post->created_at }}
+            by <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a>
+        </p>
         <p>{{ substr($post->body, 0, 30) . '...' }}</p>
         <hr>
         <p>{{ $post->body }}</p>

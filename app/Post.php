@@ -3,10 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Comment;
+use App\User;
 
 class Post extends Model
 
 {
+
+    protected $fillable = [
+        'title', 'body', 'user_id','published'
+    ];
 
     public function user()
     {
@@ -53,7 +62,23 @@ class Post extends Model
 
     }
 
+//    public function createPost() {
+//
+//
+//
+//        $this->title = request('title');
+//        $this->body = request('body');
+//        $this->user_id = Auth::user()->id;
+//        $this->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
+//
+//        /* Moze i ovako, ali je ovo ispod verovatno bolje...
+//
+//           DB::insert('insert into posts (title, body, author, published) values (?, ?, ?, ?)',
+//                            [$post->title, $post->body, $post->author, $post->published]);
+//        */
+//
+//        $this->save();
+//    }
+
 
 }
-
-

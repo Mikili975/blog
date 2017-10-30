@@ -5,6 +5,7 @@
             <a class="nav-link" href="/published">Published</a>
             <a class="nav-link" href="/unpublished">Unpublished</a>
             <a class="nav-link" href="/posts/create">Napisi blog</a>
+            <a class="nav-link" href="/users">Autori</a>
             <a class="nav-link" href="#">About</a>
             @if (Auth::user())
             <a class="nav-link" href="/logout">Logout</a>
