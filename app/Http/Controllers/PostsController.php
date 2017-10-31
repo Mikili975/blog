@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CommentsReceived;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Comment;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 
 class PostsController extends Controller
 {
@@ -84,7 +86,7 @@ class PostsController extends Controller
     public function storeComment( Post $post )
     {
 
-        $this->validate( request(), [ 'user' => 'required', 'body' => 'required' ] );
+        $this->validate( request(), [  'body' => 'required' ] );
 
         /*$comment = new Comment();
 
@@ -95,9 +97,13 @@ class PostsController extends Controller
         $comment->save();*/
 
 
-        $post->addComment(request());
+        $comment = $post->addComment(request());
+
+
+        Mail::to($post->user)->send(new CommentsReceived($comment));
 
         return redirect('/posts/'.$post->id);
         /*return redirect('/');*/
+
     }
 }

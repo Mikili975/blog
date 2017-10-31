@@ -4,8 +4,6 @@
 
     {{ csrf_field() }}
 
-    <label for="inputName" class="sr-only">Ime</label>
-    <input type="text" name="user" id="inputTitle" class="form-control" placeholder="Ime" >
 
     <label for="inputBody" class="sr-only">Tekst komentara</label>
     <textarea name="body" id="inputBody" class="form-control" placeholder="Tekst komentara" rows="5" cols="40" ></textarea>

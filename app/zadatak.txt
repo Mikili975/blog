@@ -213,3 +213,8 @@ Vežba 9 - Slanje email-ova
 -Izmeniti “from” u email konfiguracijama
 -Ponovo postaviti komentar i pogledati mail
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Vezba 9,5 - -||-
+
+- Samo ulogovanim korisnicima prikazi formu za unos komentara
+- Na svako kreiranje posta posalji mail administratoru, i u mailu kreator posta i naslov posta

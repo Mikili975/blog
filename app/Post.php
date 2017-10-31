@@ -41,10 +41,18 @@ class Post extends Model
             'user' => $request->user,
             'body' => $request->body]);*/
 
-        $this->comments()->create([
-            'user' => $request->user,
+        $comment = $this->comments()->create([
+            'user_id' => Auth::user()->id,
             'body' => $request->body
         ]);
+
+        return $comment;
+
+
+//        $this->comments()->create([
+//            'user_id' => Auth::user()->id,
+//            'body' => $request->body
+//        ]);
 
     }
 

@@ -2,12 +2,14 @@
 
 namespace App\Mail;
 
+use App\Comment;
+use App\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CommentReceived extends Mailable
+class CommentsReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +18,17 @@ class CommentReceived extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $comment;
+
+
+    /**
+     * CommentsReceived constructor.
+     * @param Post $post
+     */
+    public function __construct(Comment $comment)
     {
-        //
+        $this->comment = $comment;
     }
 
     /**
@@ -28,6 +38,6 @@ class CommentReceived extends Mailable
      */
     public function build()
     {
-        return $this->view('email.comment-received');
+        return $this->view('emails.comment-received');
     }
 }
