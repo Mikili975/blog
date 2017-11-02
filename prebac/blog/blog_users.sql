@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: blog
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.17.04.1
+-- Server version	5.7.20-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'Chackie','chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey','mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','FNi3iXDJnVRA7x94ukeACpGJ01jW2n5rkMTnWX3am1BAE20oidZQGKbkMxgj','2017-10-29 15:12:20','2017-10-29 15:12:20');
+INSERT INTO `users` VALUES (7,'chackie','chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey','mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','wS55sPCQQ6xSSjrHQhpKoQZQhoegLgpO3PGnP4VTdRwDBdz5l0ZySh51EnBY','2017-10-29 15:12:20','2017-10-29 15:12:20');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-31 21:29:10
+-- Dump completed on 2017-11-02 19:16:30

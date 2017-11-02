@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function addPost() {
 
-        $this->posts()->create([
+        return $this->posts()->create([
             'title' => request('title'),
             'body' => request('body'),
 //            'user_id' => Auth::user()->id,

@@ -218,3 +218,17 @@ Vezba 9,5 - -||-
 
 - Samo ulogovanim korisnicima prikazi formu za unos komentara
 - Na svako kreiranje posta posalji mail administratoru, i u mailu kreator posta i naslov posta
+
+Vežba X - Provera starosti pomocu middleware-a
+
+-Zadatak ove vezbe je provera starosti korisnika pri registraciji pomocu middleware-a
+-Kreirati middleware klasu `php artisan make:middleware CheckAge`
+-Kreirati register/forbidden-under-18.blade.php view fajl
+-Postaviti sadrzaj register/forbidden-under-18.blade.php fajla
+-Prosiriti register/create.blade.php sa novim poljem za unos godina
+-Otvoriti klasu ChechAge u app/Http/Middlewares i izvrsiti proveru da li polje `age`
+iz requesta ima vrednost manju od 18.
+Ako ima, vratiti view register/forbidden-under-18.blade.php; ako ne, propustiti request dalje.
+-Registrovati middleware CheckAge u Kernel.php
+-Dodati middleware na RegisterController na store() metodu
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati

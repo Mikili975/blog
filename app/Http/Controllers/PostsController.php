@@ -74,14 +74,13 @@ class PostsController extends Controller
 
         $user = Auth::user();
 
-        $user->addPost();
+        $post = $user->addPost();
 
 
 //        $post = new Post();
 //
 //        $post->createPost();
 
-        $post = $user->posts->last();
 
 //        dd($post);
 
