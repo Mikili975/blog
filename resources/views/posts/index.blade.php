@@ -12,11 +12,13 @@
 
     <ul>
 
-        @foreach($posts as $post)
+        @foreach($posts->sortByDesc('updated_at') as $post)
 
             <li>
                 <p>
                     <a href="/posts/{{$post->id}}">{{$post->title}}</a>
+                    <p>{{$post->created_at->diffForHumans()}}</p>
+                    <p>by <a href="/users/{{$post->user->name}}">{{$post->user->name}}</a></p>
                 </p>
             </li>
 

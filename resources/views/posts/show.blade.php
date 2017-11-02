@@ -12,7 +12,7 @@
 
         <h2 class="blog-post-title">{{ $post->title }}</h2>
         <p class="blog-post-meta">
-            {{ $post->created_at }}
+            {{ $post->created_at->diffForHumans() }}
             by <a href="/users/{{$post->user->name}}">{{$post->user->name}}</a>
         </p>
         <p>{{ substr($post->body, 0, 30) . '...' }}</p>

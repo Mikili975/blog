@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\CommentsReceived;
+use App\Mail\PostCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -79,6 +80,12 @@ class PostsController extends Controller
 //        $post = new Post();
 //
 //        $post->createPost();
+
+        $post = $user->posts->last();
+
+//        dd($post);
+
+        Mail::to($user)->send(new PostCreated($post));
 
         return redirect('/');
     }
