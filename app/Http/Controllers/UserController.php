@@ -38,4 +38,9 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
+    public function forbidden()
+    {
+
+        return view('register.forbidden-under-18');
+    }
 }

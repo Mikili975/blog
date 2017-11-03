@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'age', 'email', 'password',
     ];
 
     /**
@@ -44,7 +44,7 @@ class User extends Authenticatable
         return $this->posts()->create([
             'title' => request('title'),
             'body' => request('body'),
-//            'user_id' => Auth::user()->id,
+            'user_id' => Auth::user()->id,
             'published' => false
         ]);
     }

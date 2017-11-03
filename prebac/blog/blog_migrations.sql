@@ -27,7 +27,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (9,'2017_08_10_235951_create_table_posts',1),(14,'2014_10_12_000000_create_users_table',2),(15,'2014_10_12_100000_create_password_resets_table',2),(16,'2017_08_12_193129_create_posts_table',2),(17,'2017_08_18_152444_create_comments_table',3),(19,'2017_10_26_171212_droping_author_column_from_posts_table',4),(22,'2017_10_26_172701_add_author_to_posts_table',5),(23,'2017_10_31_183029_remove_user_column_from_comments_table',6),(24,'2017_10_31_183419_add_user_id_column',7);
+INSERT INTO `migrations` VALUES (9,'2017_08_10_235951_create_table_posts',1),(14,'2014_10_12_000000_create_users_table',2),(15,'2014_10_12_100000_create_password_resets_table',2),(16,'2017_08_12_193129_create_posts_table',2),(17,'2017_08_18_152444_create_comments_table',3),(19,'2017_10_26_171212_droping_author_column_from_posts_table',4),(22,'2017_10_26_172701_add_author_to_posts_table',5),(23,'2017_10_31_183029_remove_user_column_from_comments_table',6),(24,'2017_10_31_183419_add_user_id_column',7),(25,'2017_11_03_132338_add_dob_columns_to_users_table',8),(26,'2017_11_03_141405_add_age_column_to_users_table',9);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-02 21:41:14
+-- Dump completed on 2017-11-03 16:37:10

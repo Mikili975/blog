@@ -25,6 +25,10 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `day_of_birth` int(11) DEFAULT NULL,
+  `month_of_birth` int(11) DEFAULT NULL,
+  `year_of_birth` int(11) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -32,7 +36,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +45,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'chackie','chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey','mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','wS55sPCQQ6xSSjrHQhpKoQZQhoegLgpO3PGnP4VTdRwDBdz5l0ZySh51EnBY','2017-10-29 15:12:20','2017-10-29 15:12:20');
+INSERT INTO `users` VALUES (7,'chackie',13,12,1980,37,'chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey',14,6,1975,42,'mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','wS55sPCQQ6xSSjrHQhpKoQZQhoegLgpO3PGnP4VTdRwDBdz5l0ZySh51EnBY','2017-10-29 15:12:20','2017-10-29 15:12:20'),(12,'lepicane',NULL,NULL,NULL,19,'lepi.cane@example.com','$2y$10$Osn1J3UEX6GkifLZbfdhYeNtpP3vahiUH5oB1CZLajoILctsizJgK','8dCkkyaODiKnye8qbTtD9dXMN1J2cUcTjpx6AcIDiwV3QtjVDU1m9XFIBYyA','2017-11-03 13:55:00','2017-11-03 13:55:00'),(13,'lepimica',NULL,NULL,NULL,20,'lepi.mica@example.com','$2y$10$y/oQjGy.9GOIX8PnYW/gZ.URGLkhEPAhy..AAMlJXMs0eOGVX615e',NULL,'2017-11-03 14:35:57','2017-11-03 14:35:57');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-02 21:41:14
+-- Dump completed on 2017-11-03 16:37:10

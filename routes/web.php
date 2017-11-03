@@ -40,3 +40,5 @@ Route::post('/store', 'RegisterController@store');
 Route::get('/users', 'UserController@index');
 
 Route::get('/users/{name}', 'UserController@show');
+
+Route::get('/forbidden', 'UserController@forbidden');

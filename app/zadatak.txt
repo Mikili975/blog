@@ -227,8 +227,8 @@ Vežba X - Provera starosti pomocu middleware-a
 -Postaviti sadrzaj register/forbidden-under-18.blade.php fajla
 -Prosiriti register/create.blade.php sa novim poljem za unos godina
 -Otvoriti klasu ChechAge u app/Http/Middlewares i izvrsiti proveru da li polje `age`
-iz requesta ima vrednost manju od 18.
-Ako ima, vratiti view register/forbidden-under-18.blade.php; ako ne, propustiti request dalje.
+ iz requesta ima vrednost manju od 18.
+ Ako ima, vratiti view register/forbidden-under-18.blade.php; ako ne, propustiti request dalje.
 -Registrovati middleware CheckAge u Kernel.php
 -Dodati middleware na RegisterController na store() metodu
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati

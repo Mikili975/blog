@@ -30,8 +30,29 @@
             <label for="inputLastName" class="sr-only">Prezime</label>
             <input type="text" name="lastName" id="inputTitle" class="form-control" placeholder="Prezime" >
 
-            <label for="inputUsername" class="sr-only">Prezime</label>
+            <label for="inputUsername" class="sr-only">Korisnicko ime</label>
             <input type="text" name="username" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+
+            {{--<span>--}}
+                {{--<select name="month">--}}
+                    {{--<option value="January">January</option>--}}
+                    {{--<option value="February">February</option>--}}
+                    {{--<option value="March">March</option>--}}
+                    {{--<option value="April">April</option>--}}
+                    {{--<option value="May">May</option>--}}
+                    {{--<option value="June">June</option>--}}
+                    {{--<option value="July">July</option>--}}
+                    {{--<option value="August">August</option>--}}
+                    {{--<option value="September">September</option>--}}
+                    {{--<option value="October">October</option>--}}
+                    {{--<option value="November">November</option>--}}
+                    {{--<option value="December">December</option>--}}
+                {{--</select>--}}
+            {{--</span>--}}
+
+
+            <label for="inputAge" class="sr-only">Age</label>
+            <input type="text" name="age" id="inputAge" class="form-control" placeholder="age" >
 
             <label for="inputEmail" class="sr-only">e-mail</label>
             <input type="text" name="email" id="inputTitle" class="form-control" placeholder="e-mail" >
