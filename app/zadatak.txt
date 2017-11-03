@@ -219,7 +219,7 @@ Vezba 9,5 - -||-
 - Samo ulogovanim korisnicima prikazi formu za unos komentara
 - Na svako kreiranje posta posalji mail administratoru, i u mailu kreator posta i naslov posta
 
-Vežba X - Provera starosti pomocu middleware-a
+Vežba 10 - Provera starosti pomocu middleware-a
 
 -Zadatak ove vezbe je provera starosti korisnika pri registraciji pomocu middleware-a
 -Kreirati middleware klasu `php artisan make:middleware CheckAge`
@@ -232,3 +232,15 @@ Vežba X - Provera starosti pomocu middleware-a
 -Registrovati middleware CheckAge u Kernel.php
 -Dodati middleware na RegisterController na store() metodu
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Vežba 11 - Koriscenje session-a
+
+-https://laravel.com/docs/5.4/session#introduction
+-U ovoj vezbi je koriscena flash message preko session-a nakon registracije
+-Objasniti sta su sessions i koja je njihova uloga
+-Objasniti koriscenje helpera sessions()
+-Objasniti sta su flash messages preko session-a
+-Dodati flash message poruku nakon registracije (pre redirekcije na /post stranu)
+-Izmeniti master.blade.php za prikaz flash message-a
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+

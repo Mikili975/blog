@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: blog
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.17.04.1
+-- Server version	5.7.20-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,10 +25,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `day_of_birth` int(11) DEFAULT NULL,
-  `month_of_birth` int(11) DEFAULT NULL,
-  `year_of_birth` int(11) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
+  `dob` datetime DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -36,7 +33,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'chackie',13,12,1980,37,'chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey',14,6,1975,42,'mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','wS55sPCQQ6xSSjrHQhpKoQZQhoegLgpO3PGnP4VTdRwDBdz5l0ZySh51EnBY','2017-10-29 15:12:20','2017-10-29 15:12:20'),(12,'lepicane',NULL,NULL,NULL,19,'lepi.cane@example.com','$2y$10$Osn1J3UEX6GkifLZbfdhYeNtpP3vahiUH5oB1CZLajoILctsizJgK','8dCkkyaODiKnye8qbTtD9dXMN1J2cUcTjpx6AcIDiwV3QtjVDU1m9XFIBYyA','2017-11-03 13:55:00','2017-11-03 13:55:00'),(13,'lepimica',NULL,NULL,NULL,20,'lepi.mica@example.com','$2y$10$y/oQjGy.9GOIX8PnYW/gZ.URGLkhEPAhy..AAMlJXMs0eOGVX615e',NULL,'2017-11-03 14:35:57','2017-11-03 14:35:57');
+INSERT INTO `users` VALUES (7,'chackie','1981-12-13 00:00:00','chackie@example.com','$2y$10$4lbyltDV1EHIMQ8JxYYehOwN5OHIGnkYBfwVOLdAURx95xgH1bega','UbOhnAfJGWHbJN5I5mT0jAhA7PnluMOTxaFQuFBt2qZLFYxswbDxJBLDZPKc','2017-09-26 18:14:05','2017-09-26 18:14:05'),(8,'mickey','1975-06-14 00:00:00','mickey@example.com','$2y$10$6uwbNI/70HCmOl958T4wQ.SDGUSuJSnHCL0Q6tpsisKTjCNzF.Rsu','wS55sPCQQ6xSSjrHQhpKoQZQhoegLgpO3PGnP4VTdRwDBdz5l0ZySh51EnBY','2017-10-29 15:12:20','2017-10-29 15:12:20'),(12,'lepicane','1954-11-20 00:00:00','lepi.cane@example.com','$2y$10$Osn1J3UEX6GkifLZbfdhYeNtpP3vahiUH5oB1CZLajoILctsizJgK','8dCkkyaODiKnye8qbTtD9dXMN1J2cUcTjpx6AcIDiwV3QtjVDU1m9XFIBYyA','2017-11-03 13:55:00','2017-11-03 13:55:00'),(13,'lepimica','1978-01-13 00:00:00','lepi.mica@example.com','$2y$10$y/oQjGy.9GOIX8PnYW/gZ.URGLkhEPAhy..AAMlJXMs0eOGVX615e','FPG0izZxLO1fHrRjWrZrInPjdirALk27hUNitt2OSMY9UxgiGnKwdJD1y9fl','2017-11-03 14:35:57','2017-11-03 14:35:57'),(14,'lepisale','1983-04-03 00:00:00','lepi.sale@example.com','$2y$10$gowlAS3AL2o5pX65cCdlhu0MxR4hR6thgtseatgFY5TMepb3eHUmi','LHOnur5MbY9xeCmQmafNnd85Nw4uLrmF4QhxNYfdvGpOXhdICfpCubcHHvGr','2017-11-03 15:58:56','2017-11-03 15:58:56'),(17,'lepamara','1998-12-20 00:00:00','lepa.mara@example.com','$2y$10$Jrn0/c2Hie.IoVAnjWYPneCE9WsLMejawK/3Fxu.8LZF4apvBVuum','quHdkXqzh2ViW1yrrUU0MJjzGUoHBKahb1DIPh0I8n4TmJlE1NiR9eOSzfoo','2017-11-03 18:05:57','2017-11-03 18:05:57'),(18,'lepiboki','1988-03-19 00:00:00','lepi.boki@example.com','$2y$10$FYAoi2fSOcr/sLIpWG0/ZujqKZ6cAut3FrX3DugfAvHrd4OL.//8i','mRtPm2VF12pApbT9l372JUrW4Nz7TELyQLJXUkblQRUEr3B8HR9tDAkE2A3s','2017-11-03 18:14:44','2017-11-03 18:14:44');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-03 16:37:10
+-- Dump completed on 2017-11-03 20:21:28

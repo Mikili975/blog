@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use \Carbon\Carbon;
 class RegisterController extends Controller
 {
     public function __construct()
@@ -29,18 +30,25 @@ class RegisterController extends Controller
                 'firstName' => 'required',
                 'lastName' => 'required',
                 'username' => 'required',
-                'age' => 'required',
                 'email' => 'required|email',
                 'password' => 'required|confirmed',
             ]
         );
+
+        //sredi korisnikov d.o.b.
+
+        $dob = Carbon::createFromDate(request('year'), request('month'), request('day'), 'Europe/Belgrade');
+
+
         // napravi korisnika
+
         $user = new User();
         $user->name = request('username');
-        $user->age = request('age');
+        $user->dob = $dob->toDateString();
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
         $user->save();
+        
         //uloguj korisnika
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             // Authentication passed...

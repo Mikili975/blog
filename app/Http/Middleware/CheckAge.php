@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\User;
+use Carbon\Carbon;
 use Closure;
 
 class CheckAge
@@ -17,11 +18,14 @@ class CheckAge
     public function handle($request, Closure $next)
     {
 
-        //dd($request->age);
+        $age = Carbon::createFromDate(
 
+            request('year'), request('month'), request('day'), 'Europe/Belgrade'
 
-        if ($request->age<18) {
-            return redirect('/forbidden');
+            )->diffInYears(Carbon::now());
+
+        if ($age < 18) {
+            return redirect('forbidden');
         }
 
         return $next($request);
