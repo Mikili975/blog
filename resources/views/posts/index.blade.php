@@ -10,6 +10,14 @@
 
     <h1>Blogovi</h1>
 
+    {{--<h2>--}}
+
+        {{--@php(dd(session()->all()))--}}
+
+            {{--@endphp--}}
+
+    {{--</h2>--}}
+
     <ul>
 
         @foreach($posts->sortByDesc('updated_at') as $post)

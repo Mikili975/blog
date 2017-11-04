@@ -21,6 +21,10 @@ class RegisterController extends Controller
     {
         return view('/users/new');
     }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|string
+     */
     public function store()
     {
         //validacija
@@ -48,6 +52,8 @@ class RegisterController extends Controller
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
         $user->save();
+
+        session()->flash('message', 'Hvala na registraciji!');
         
         //uloguj korisnika
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
@@ -57,5 +63,9 @@ class RegisterController extends Controller
             return 'greska';
         }
         // redirekcija na home page
+
+
+
+
     }
 }

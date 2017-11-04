@@ -26,6 +26,16 @@
 
 {{--@include ('layouts.partials.errors')--}}
 
+@if(session('message'))
+
+<div class="alert-success" role="alert">
+
+    {{session('message')}}
+
+</div>
+
+@endif
+
 <div class="container">
 
     <div class="row">
