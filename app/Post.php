@@ -32,6 +32,13 @@ class Post extends Model
 
     }
 
+    public function tags()
+    {
+
+        return $this->belongsToMany(Tag::class);
+
+    }
+
     public function addComment($request)
     {
         // iskoristis relaciju ka komentarima i da snimis jedan komentar

@@ -37,8 +37,10 @@ Route::get('/register', 'RegisterController@create');
 
 Route::post('/store', 'RegisterController@store');
 
-Route::get('/users', 'UserController@index');
+Route::get('/users', 'UsersController@index');
 
-Route::get('/users/{name}', 'UserController@show');
+Route::get('/users/{name}', 'UsersController@show');
 
-Route::get('/forbidden', 'UserController@forbidden');
+Route::get('/forbidden', 'UsersController@forbidden');
+
+Route::get('/tags', 'TagsController@index');

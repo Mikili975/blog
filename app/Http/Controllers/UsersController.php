@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use App\Post;
-use App\Comment;
 use App\User;
+use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UsersController extends Controller
+
 {
 
     public function index()
@@ -28,11 +25,11 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-     //   dd($id);
+        //   dd($id);
 
-     //   dd($user);
+        //   dd($user);
 
-     //   $user = User::find($name);
+        //   $user = User::find($name);
 
 
         return view('users.show', compact('user'));
@@ -44,3 +41,5 @@ class UserController extends Controller
         return view('register.forbidden-under-18');
     }
 }
+
+

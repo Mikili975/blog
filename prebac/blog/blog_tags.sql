@@ -16,28 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `migrations`
+-- Table structure for table `tags`
 --
 
-DROP TABLE IF EXISTS `migrations`;
+DROP TABLE IF EXISTS `tags`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `migrations` (
+CREATE TABLE `tags` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tags_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data for table `tags`
 --
 
-LOCK TABLES `migrations` WRITE;
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (9,'2017_08_10_235951_create_table_posts',1),(14,'2014_10_12_000000_create_users_table',2),(15,'2014_10_12_100000_create_password_resets_table',2),(16,'2017_08_12_193129_create_posts_table',2),(17,'2017_08_18_152444_create_comments_table',3),(19,'2017_10_26_171212_droping_author_column_from_posts_table',4),(22,'2017_10_26_172701_add_author_to_posts_table',5),(23,'2017_10_31_183029_remove_user_column_from_comments_table',6),(24,'2017_10_31_183419_add_user_id_column',7),(25,'2017_11_03_132338_add_dob_columns_to_users_table',8),(26,'2017_11_03_141405_add_age_column_to_users_table',9),(27,'2017_11_03_184353_drop_old_dob_columns_from_users_table',10),(32,'2017_11_03_184937_add_new_dob_column_to_users_table',11),(33,'2017_11_04_173249_create_tags_table',12),(36,'2017_11_05_143418_create_tags_table',13),(37,'2017_11_05_143512_create_post__tag_table',13);
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+LOCK TABLES `tags` WRITE;
+/*!40000 ALTER TABLE `tags` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

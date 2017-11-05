@@ -244,3 +244,15 @@ Vežba 11 - Koriscenje session-a
 -Izmeniti master.blade.php za prikaz flash message-a
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
+Vežba 12 - Postovi i tagovi
+
+-U ovoj vezbi se postovi filtriraju po odredjenom tagu i svaki post prikazuje koje tagove sadrzi
+-Kreirati novi model Tag zajedno sa migracijom: `php artisan make:model Tag -m`
+-Izmeniti migraciju za tags tabelu i post_tag tabelu
+-Izvrsiti migraciju: `php artisan migrate`
+-Kreirati rutu za prikaz postova sa odredjenim tagom
+-Kreirati kontroler za tagove: `php artisan make:controller TagsController`
+-Izmena Tag modela, kreiranje relacije prema postovima i setovanje route key name-a
+-Izmena Post modela, dodavanje relacije prema tagovima
+-Izmeniti `posts/show.blade.php` view fajl za prikaz tagova datog posta
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
