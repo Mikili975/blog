@@ -77,14 +77,6 @@ class PostsController extends Controller
 
         $post = $user->addPost();
 
-
-//        $post = new Post();
-//
-//        $post->createPost();
-
-
-//        dd($post);
-
         Mail::to($user)->send(new PostCreated($post));
 
         return redirect('/');
@@ -94,15 +86,6 @@ class PostsController extends Controller
     {
 
         $this->validate( request(), [  'body' => 'required' ] );
-
-        /*$comment = new Comment();
-
-        $comment->user = request('user');
-        $comment->body = request('body');
-        $comment->post_id = request('post_id');
-
-        $comment->save();*/
-
 
         $comment = $post->addComment(request());
 

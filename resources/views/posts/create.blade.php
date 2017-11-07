@@ -31,7 +31,10 @@
             <label for="inputBody" class="sr-only">Sadrzaj</label>
             <textarea name="body" id="inputBody" class="form-control" placeholder="Blog" rows="5" cols="40" ></textarea>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
+            <label for="input tags" class="sr-only">Tagovi</label>
+            <input type="text" name="tagsCommaSeparated" id="inputTitle" class="form-control" placeholder="Tagovi" >
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Objavi</button>
         </form>
 
     </div> <!-- /container -->
