@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Comment;
 use App\User;
+use App\Tag;
 
 class Post extends Model
 
@@ -73,18 +74,26 @@ class Post extends Model
 
         foreach ($newTags as $newTag) {
 
-            foreach (Tag::all() as $existingTag) {
-                    //dd($existingTag->name);
-                if ($newTag == $existingTag->name) {
+            $existingTags = Tag::all()->pluck('name');
 
-                    //dd('tu smo');
-                    //Ako tag vec postoji, onda se upisuje samo u pivot tabelu
-                    //id ovog posta kao post_id i id tog taga kao tag_id
-                    $post->tags()->attach($post->id);
+            //dd($existingTags, $newTag);
 
-                    dd($post->tags());
 
-                }
+            if (!(in_array($newTag, $existingTags->toArray()))) {
+
+                //dd('ne postoji');
+
+                //upisi novi tag u bazu
+
+                $this->tags()->create([
+                    'name' => $newTag
+                ]);
+            }
+
+            else {
+
+                //"samo" povezes postojeci tag sa trenutnim postom
+                //
 
             }
 
@@ -104,24 +113,5 @@ class Post extends Model
         return static::where('published', '0')->get();
 
     }
-
-//    public function createPost() {
-//
-//
-//
-//        $this->title = request('title');
-//        $this->body = request('body');
-//        $this->user_id = Auth::user()->id;
-//        $this->published = false;  // Dok administrator ne odobri blog, vodi se kao unpublished
-//
-//        /* Moze i ovako, ali je ovo ispod verovatno bolje...
-//
-//           DB::insert('insert into posts (title, body, author, published) values (?, ?, ?, ?)',
-//                            [$post->title, $post->body, $post->author, $post->published]);
-//        */
-//
-//        $this->save();
-//    }
-
 
 }

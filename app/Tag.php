@@ -15,4 +15,12 @@ class Tag extends Model
         return $this->belongsToMany(Post::class);
 
     }
+
+    public function addTag($tag) {
+
+        return $this->create([
+            'name' => $tag->name,
+        ]);
+
+    }
 }
