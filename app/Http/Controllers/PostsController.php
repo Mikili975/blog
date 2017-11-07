@@ -77,6 +77,14 @@ class PostsController extends Controller
 
         $post = $user->addPost();
 
+
+        //SREDI TAGOVE!!!
+        //Od commaSeparated napravi array
+
+        $newTags = array_map('trim', explode(',', request('tagsCommaSeparated')));
+
+        $post->addTags($post, $newTags);
+
         Mail::to($user)->send(new PostCreated($post));
 
         return redirect('/');

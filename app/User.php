@@ -49,42 +49,5 @@ class User extends Authenticatable
 
         ]);
 
-//SREDI TAGOVE!!!
-        //Od commaSeparated napravi array
-
-        $tags = array_map('trim', explode(',', request('tagsCommaSeparated')));
-
-        //Proveri da li neki od tagova vec postoji u bazi,
-        //ako postoji, onda samo upisi njegov id u tag_id kolonu i povezi ga sa id od ovog posta
-        //ako ne postoji, onda ga upisi u tabelu tags, pa onda odradi prethodno kao da postoji u bazi
-
-        $post = $this->posts();
-        dd($post);
-
-        foreach ($tags as $tag) {
-
-            $existingTags = Tag::all();
-            dd($existingTags);
-            foreach ($existingTags as $existingTag) {
-
-                if ($tag == $existingTag) {
-
-                    //Ako tag vec postoji, onda se upisuje samo u pivot tabelu
-                    //id ovog posta kao post_id i id tog taga kao tag_id
-
-                    return $this->posts();
-
-                }
-                else {
-
-                    //Ako tag ne postoji, onda se upisuje u bazu tags, a nakon toga se
-                    //uradi isti postupak kao i u if-u iznad
-
-
-                }
-            }
-
-        }
-
     }
 }

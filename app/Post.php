@@ -63,6 +63,34 @@ class Post extends Model
 
     }
 
+    public function addTags($post, $newTags)
+    {
+
+        //Proveri da li neki od tagova vec postoji u bazi,
+        //ako postoji, onda samo upisi njegov id u tag_id kolonu i povezi ga sa id od ovog posta
+        //ako ne postoji, onda ga upisi u tabelu tags, pa onda odradi prethodno kao da postoji u bazi
+
+
+        foreach ($newTags as $newTag) {
+
+            foreach (Tag::all() as $existingTag) {
+                    //dd($existingTag->name);
+                if ($newTag == $existingTag->name) {
+
+                    //dd('tu smo');
+                    //Ako tag vec postoji, onda se upisuje samo u pivot tabelu
+                    //id ovog posta kao post_id i id tog taga kao tag_id
+                    $post->tags()->attach($post->id);
+
+                    dd($post->tags());
+
+                }
+
+            }
+
+        }
+    }
+
     public static function published()
     {
 
