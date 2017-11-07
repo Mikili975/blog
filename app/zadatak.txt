@@ -256,3 +256,28 @@ Vežba 12 - Postovi i tagovi
 -Izmena Post modela, dodavanje relacije prema tagovima
 -Izmeniti `posts/show.blade.php` view fajl za prikaz tagova datog posta
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+Vežba XIIIa - Seeders
+
+-Zadatak ove vezbe je cuvanje velike kolicine test podataka u bazu
+-https://laravel.com/docs/5.4/seeding
+-Objasniti sta su seeders i njihovu primenu
+-Kreirati UsersTableSeeder: `php artisan make:seeder UsersTableSeeder`
+-Iskoristiti factory za users i kreirati u UsersTableSeeder 20 korisnika
+-Pokrenuti UsersTableSeeder: `php artisan db:seed --class=UsersTableSeeder`
+-Kreirati PostsTableSeeder: `php artisan make:seeder PostsTableSeeder`
+-Kreirati factory za Posts po uzoru na factory za Users
+-Iskoristiti postojeci PostFactory i kreirati u PostsTableSeeder za svakog korisnika po 5 postova
+-Pokrenuti PostsTableSeeder: `php artisan db:seed --class=PostsTableSeeder`
+-Kreirati CommentsTableSeeder: `php artisan make:seeder CommentsTableSeeder`
+-Kreirati factory za Comments
+-Kreirati u CommentsTableSeeder za svaki post po 6 komentara
+-Pokrenuti CommentsTableSeeder: `php artisan db:seed --class=CommentsTableSeeder`
+-Kreirati TagsTableSeeder: `php artisan make:seeder TagsTableSeeder`
+-U TagsTableSeeder kreirati 5 tagova: Blogging, Freelancing, How to Succeed, Internet Marketing, Miscellaneous,
+-Nakon toga, u TagsTableSeeder povezati postove za razlicitim tagovima
+-Pokrenuti TagsTableSeeder: `php artisan db:seed --class=TagsTableSeeder`
+-Izmeniti klasu DatabaseSeeder za pokretanje vise seeder-a
+-Za rollback i re-run svih migraciju uz pokretanje seeder-a izvrsiti: `php artisan migrate:refresh --seed`
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati

@@ -83,7 +83,7 @@ class PostsController extends Controller
 
         $newTags = array_map('trim', explode(',', request('tagsCommaSeparated')));
 
-        $post->addTags($post, $newTags);
+        $post->addTags($newTags);
 
         Mail::to($user)->send(new PostCreated($post));
 

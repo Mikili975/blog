@@ -64,7 +64,7 @@ class Post extends Model
 
     }
 
-    public function addTags($post, $newTags)
+    public function addTags($newTags)
     {
 
         //Proveri da li neki od tagova vec postoji u bazi,
@@ -74,12 +74,12 @@ class Post extends Model
 
         foreach ($newTags as $newTag) {
 
-            $existingTags = Tag::all()->pluck('name');
+            $existingTags = Tag::all()->pluck('name')->toArray();
 
             //dd($existingTags, $newTag);
 
 
-            if (!(in_array($newTag, $existingTags->toArray()))) {
+            if (!(in_array($newTag, $existingTags))) {
 
                 //dd('ne postoji');
 
@@ -93,7 +93,13 @@ class Post extends Model
             else {
 
                 //"samo" povezes postojeci tag sa trenutnim postom
-                //
+                //select id from blog.tags where name = newTag
+
+                $tag = Tag::where('name',$newTag)->first();
+
+                //update blog.post_tag values (post_id,tag_id)
+
+                $this->tags()->attach($tag->id);
 
             }
 
