@@ -44,3 +44,5 @@ Route::get('/users/{name}', 'UsersController@show');
 Route::get('/forbidden', 'UsersController@forbidden');
 
 Route::get('/tags', 'TagsController@index');
+
+Route::get('/tags/{name}', 'TagsController@show');

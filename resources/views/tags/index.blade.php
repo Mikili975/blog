@@ -17,7 +17,7 @@
 
             <li>
                 <p>
-                    <a href="/tags/{{$tag->id}}">{{$tag->name}}</a>
+                    <a href="/tags/{{$tag->name}}">{{$tag->name}}</a>
                 </p>
             </li>
 

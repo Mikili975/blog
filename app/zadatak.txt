@@ -258,7 +258,7 @@ Vežba 12 - Postovi i tagovi
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
 
-Vežba XIIIa - Seeders
+Vežba 13a - Seeders
 
 -Zadatak ove vezbe je cuvanje velike kolicine test podataka u bazu
 -https://laravel.com/docs/5.4/seeding
