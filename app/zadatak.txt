@@ -265,7 +265,7 @@ Vežba 13a - Seeders
 -Objasniti sta su seeders i njihovu primenu
 -Kreirati UsersTableSeeder: `php artisan make:seeder UsersTableSeeder`
 -Iskoristiti factory za users i kreirati u UsersTableSeeder 20 korisnika
--Pokrenuti UsersTableSeeder: `php artisan db:seed --class=UsersTableSeeder`
+-Pokrenuti UsersTableSeeder: `-`
 -Kreirati PostsTableSeeder: `php artisan make:seeder PostsTableSeeder`
 -Kreirati factory za Posts po uzoru na factory za Users
 -Iskoristiti postojeci PostFactory i kreirati u PostsTableSeeder za svakog korisnika po 5 postova

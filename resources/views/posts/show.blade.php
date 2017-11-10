@@ -20,12 +20,12 @@
         <p>{{ $post->body }}</p>
         <h4>Tagovi za ovaj blog</h4>
 
-        {{--@php(dd($post->tags)) @endphp--}}
 
+        <p>
         @foreach($post->tags as $tag)
-
-            <p><a href="/tags/{{$tag->name}}">#{{$tag->name}}</a></p>
+            <a href="/tags/{{$tag->name}}">#{{$tag->name}}</a>
         @endforeach
+        </p>
 
     </div>
 

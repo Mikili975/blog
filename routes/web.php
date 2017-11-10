@@ -46,3 +46,12 @@ Route::get('/forbidden', 'UsersController@forbidden');
 Route::get('/tags', 'TagsController@index');
 
 Route::get('/tags/{name}', 'TagsController@show');
+
+Route::get('/test', 'TestController@index');
+
+Route::post('/test/users', 'TestController@storeUsers');
+
+Route::post('/test/posts', 'TestController@storePosts');
+
+Route::post('/test/comments', 'TestController@storeComments');
+
