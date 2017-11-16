@@ -34,4 +34,6 @@
 
     </ul>
 
+    {{ $posts->links() }}
+
 @endsection

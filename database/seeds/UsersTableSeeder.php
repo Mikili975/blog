@@ -11,11 +11,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => str_random(10),
-            'email' => str_random(10).'@gmail.com',
-            'dob' => '1975-11-05 00:00:00',
-            'password' => bcrypt('secret'),
-        ]);
+        factory('App\User',20)->create();
     }
 }

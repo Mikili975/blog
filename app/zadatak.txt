@@ -281,3 +281,15 @@ Vežba 13a - Seeders
 -Izmeniti klasu DatabaseSeeder za pokretanje vise seeder-a
 -Za rollback i re-run svih migraciju uz pokretanje seeder-a izvrsiti: `php artisan migrate:refresh --seed`
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+
+Vežba 13b - Pagination
+
+-Zadatak ove vezbe je upotreba paginacije pri prikazivanju postova
+-Sta je paginacija: prikaz velikog broja unosa iz baze na vise stranica
+-https://laravel.com/docs/5.4/pagination
+-Prikaz rezultata paginacije
+-Izmeniti index() akciju u PostsController-u da izvrsava paginaciju za svakih 10 postova
+-Izmeniti posts/index.blade.php tako da se na dugmice ‘Previous’ i ‘Next’ prelazi na prethodnu ili sledecu stranu sa postovima. Prikazati koja je trenutna strana od ukupnog broja strana.
+-Objasniti metode paginator instance
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
