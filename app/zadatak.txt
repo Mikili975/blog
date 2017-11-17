@@ -290,6 +290,7 @@ Vežba 13b - Pagination
 -https://laravel.com/docs/5.4/pagination
 -Prikaz rezultata paginacije
 -Izmeniti index() akciju u PostsController-u da izvrsava paginaciju za svakih 10 postova
--Izmeniti posts/index.blade.php tako da se na dugmice ‘Previous’ i ‘Next’ prelazi na prethodnu ili sledecu stranu sa postovima. Prikazati koja je trenutna strana od ukupnog broja strana.
+-Izmeniti posts/index.blade.php tako da se na dugmice ‘Previous’ i ‘Next’ prelazi na prethodnu ili sledecu stranu sa postovima.
+ Prikazati koja je trenutna strana od ukupnog broja strana.
 -Objasniti metode paginator instance
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
