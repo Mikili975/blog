@@ -294,3 +294,23 @@ Vežba 13b - Pagination
  Prikazati koja je trenutna strana od ukupnog broja strana.
 -Objasniti metode paginator instance
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Vežba XIV - Lazy vs Eager loading
+
+-Objasniti sta su dynamic properties - "lazy loading"
+-Objasniti kada se koristi eager loading
+-https://laravel.com/docs/5.4/eloquent-relationships#querying-relations
+-https://laravel.com/docs/5.4/eloquent-relationships#eager-loading
+-Izmeniti akciju index() u PostsController-u
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Vežba XV - Dodavanje tagova pri kreiranju posta
+
+-Zadatak ove vezbe je dodavanje vise tagova pri kreiranju posta
+-Izmeniti posts/create.blade.php tako da se tagovi biraju pomocu checkbox kontrola (dodati par input -kontrola tipa checkbox i testirati na backend-u sta se prosledjuje request-u)
+-Izmeniti akciju create() u PostsController-u da vraca sve vrednosti tagova u bazi
+-Izmeniti posts/create.blade.php tako da prikazuje vrednosti tagova iz baze, a vrednosti input checkbox polja treba da budu id-evi tagova
+-Izmeniti store() akciju u PostsController-u da validira niz id-ova tagova i da poveze trenutni post sa datim nizom tag id-eva u pivot tabeli
+-Izmeniti index() akciju u PostsControlleru da prikazuje najnovije postavljene postove
+-Izmeniti index() akciju u TagsControlleru da prikazuje najnovije postove sa datim tagom uz paginaciju i ‘eager loading’ user-a
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati

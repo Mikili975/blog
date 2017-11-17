@@ -29,9 +29,12 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(10);
 
-        //dd($posts);
+        //namesti da prikazuje najnovije postove gore
+
+        //dd($posts);+
+        // Promeni index view za postove tako da prikazuje  naslov, autora i poslednji komentar
 
 
         return view('posts.index', compact('posts'));
@@ -89,6 +92,7 @@ class PostsController extends Controller
 
         Mail::to($user)->send(new PostCreated($post));
 
+        //redirektuj na taj novi post
         return redirect('/');
     }
 

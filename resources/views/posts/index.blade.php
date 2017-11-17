@@ -36,4 +36,6 @@
 
     {{ $posts->links() }}
 
+    {{--Laravel bootstrap pagination ili neki pagination probaj--}}
+
 @endsection

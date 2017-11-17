@@ -33,29 +33,42 @@ class TagsTableSeeder extends Seeder
             'name' => 'Miscellaneous'
         ]);
 
-        $postIds = Post::all()->pluck('id');  //->id->pluck();
+        //$postIds = Post::all()->pluck('id');  //->id->pluck();
         //dd($postIds);
 
-        $tagIds = Tag::all()->pluck('id')->toArray();
+        $tagIds = Tag::all()->pluck('id');
         //dd($tagIds);
 
-        foreach ($postIds as $postId) {
+//        $tags = Tag::all();
 
-            $post = Post::find($postId);
+        $posts = Post::all();
 
-            $tag1 = Tag::find(array_rand($tagIds));
+        $posts->each(function($post) use($tagIds) {
+            $post->tags()->attach($tagIds->random(2));
+        });
 
-            $tag2 = Tag::find(array_rand($tagIds));
-
-//            var_dump($tag1->id);
-//            var_dump($tag2->id);
-//            die();
-
-            $post->tags()->attach($tag1);
-
-            $post->tags()->attach($tag2);
-
-        }
+//        foreach ($postIds as $postId) {
+//
+//            $post = Post::find($postId);
+//
+//            $a1 = array_rand($tagIds);
+//            $a2 = array_rand($tagIds);
+//
+//            var_dump($a1, $a2);
+//
+//
+//            $tag1 = Tag::find($a1);
+//
+//            $tag2 = Tag::find($a2);
+//
+//            dd($tag1->id,$tag2->id);
+//
+//
+//            $post->tags()->attach($tag1);
+//
+//            $post->tags()->attach($tag2);
+//
+//        }
 
 
     }
