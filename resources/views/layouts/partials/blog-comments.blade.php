@@ -4,7 +4,7 @@
 
         <div class="com_comment ">
                 <div class="comName">
-                        <h4>{{$comment->user->name}}</h4>
+                        <h4><a href="/users/{{$comment->user->name}}">{{$comment->user->name}}</a> </h4>
                         <span>{{$comment->updated_at}}</span>
                 </div>
 
