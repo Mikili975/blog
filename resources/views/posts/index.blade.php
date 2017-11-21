@@ -20,13 +20,20 @@
 
     <ul>
 
-        @foreach($posts->sortByDesc('updated_at') as $post)
+        @foreach($posts as $post)
+
+            {{--@php(dd($post->comments->last()->user->name))--}}
+                {{--@endphp--}}
+
 
             <li>
                 <p>
                     <a href="/posts/{{$post->id}}">{{$post->title}}</a>
                     <p>{{$post->created_at->diffForHumans()}}</p>
                     <p>by <a href="/users/{{$post->user->name}}">{{$post->user->name}}</a></p>
+                    <p>Poslednji komentar... </p>
+                    <p>{{$post->comments->last()->body}}</p>
+                    <p>by <a href="/users/{{$post->comments->last()->user->name}}">{{$post->comments->last()->user->name}}</a></p>
                 </p>
             </li>
 
@@ -34,7 +41,7 @@
 
     </ul>
 
-    {{ $posts->links() }}
+    {{--{{ $posts->links() }}--}}
 
     {{--Laravel bootstrap pagination ili neki pagination probaj--}}
 

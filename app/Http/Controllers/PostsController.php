@@ -29,7 +29,12 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::paginate(10);
+        $posts = Post::with(['comments.user', 'user'])->paginate(10)->sortByDesc('created_at');
+
+        //Dovuci postove i za njih zalepi poslednji komentar za svaki post i usera koji ga je napisao
+        //Pogledaj u dokumentaciji kako ces da resis
+
+        //dd($posts);
 
         //namesti da prikazuje najnovije postove gore
 

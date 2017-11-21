@@ -1,4 +1,6 @@
 <div class="sidebar-module sidebar-module-inset">
-    <h4>Ovde neka sekcija - jbm li ga za nesto</h4>
-    <p>Ovde nesto kenjas o ovome iznad</p>
+    <h4>Svi tagovi</h4>
+    @foreach($tags as $tag)
+        <a href="/tags/{{$tag}}">{{$tag}}</a>
+    @endforeach
 </div>

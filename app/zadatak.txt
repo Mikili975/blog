@@ -295,7 +295,7 @@ Vežba 13b - Pagination
 -Objasniti metode paginator instance
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
-Vežba XIV - Lazy vs Eager loading
+Vežba 14 - Lazy vs Eager loading
 
 -Objasniti sta su dynamic properties - "lazy loading"
 -Objasniti kada se koristi eager loading
@@ -304,7 +304,7 @@ Vežba XIV - Lazy vs Eager loading
 -Izmeniti akciju index() u PostsController-u
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
 
-Vežba XV - Dodavanje tagova pri kreiranju posta
+Vežba 15 - Dodavanje tagova pri kreiranju posta
 
 -Zadatak ove vezbe je dodavanje vise tagova pri kreiranju posta
 -Izmeniti posts/create.blade.php tako da se tagovi biraju pomocu checkbox kontrola (dodati par input -kontrola tipa checkbox i testirati na backend-u sta se prosledjuje request-u)
@@ -313,4 +313,14 @@ Vežba XV - Dodavanje tagova pri kreiranju posta
 -Izmeniti store() akciju u PostsController-u da validira niz id-ova tagova i da poveze trenutni post sa datim nizom tag id-eva u pivot tabeli
 -Izmeniti index() akciju u PostsControlleru da prikazuje najnovije postavljene postove
 -Izmeniti index() akciju u TagsControlleru da prikazuje najnovije postove sa datim tagom uz paginaciju i ‘eager loading’ user-a
+-Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
+
+Vežba 16 - Prikaz postojecih tagova u sidebar
+
+-Zadatak ove vezbe je prikaz tagova u sidebar-u koji su povezani sa postojecim postovima
+-Objasniti sta su view composer-i
+-https://laravel.com/docs/5.4/views#view-composers
+-https://laravel.com/docs/5.4/eloquent-relationships#querying-relations za metodu has()
+-Izmeniti AppServiceProvider.php da bi se prosledila lista tagova u master.blade.php svaki put kada se refresh-uje stranica
+-Izmeniti master.blade.php za prikaz liste tagova koji su povezani sa postovima
 -Proći pojedinačno sa kandidatima da li svi razumeju urađeno i komitovati
