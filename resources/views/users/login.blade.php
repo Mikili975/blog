@@ -1,44 +1,44 @@
-@extends ('layouts.master')
+    @extends ('layouts.master')
 
-@section ('title')
+    @section ('title')
 
-    Prijava
+        Prijava
 
-@endsection
+    @endsection
 
-@section('content')
-
-
-    {{--@includeWhen($errors->any(), 'posts.error')--}}
+    @section('content')
 
 
-
-    <div class="container">
-
-        <h4 class="form-signin-heading">Postojeci korisnik</h4>
-
-        @include('layouts.partials.errors')
+        {{--@includeWhen($errors->any(), 'posts.error')--}}
 
 
-        <form action="/check" method="post"  class="form-signin">
 
-            {{ csrf_field() }}
+        <div class="container">
 
-            <label for="inputUsername" class="sr-only">Korisnicko ime</label>
-            <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+            <h4 class="form-signin-heading">Postojeci korisnik</h4>
 
-            <label for="inputPassword" class="sr-only">Sifra</label>
-            <input type="password" name="password" id="inputTitle" class="form-control" placeholder="Sifra" >
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
-        </form>
+            @include('layouts.partials.errors')
 
 
-        <h4 class="form-signin-heading">Nemate nalog?  <a href="/register">Registrujte se</a></h4>
+            <form action="/check" method="post"  class="form-signin">
+
+                {{ csrf_field() }}
+
+                <label for="inputUsername" class="sr-only">Korisnicko ime</label>
+                <input type="text" name="name" id="inputTitle" class="form-control" placeholder="Korisnicko ime" >
+
+                <label for="inputPassword" class="sr-only">Sifra</label>
+                <input type="password" name="password" id="inputTitle" class="form-control" placeholder="Sifra" >
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
+            </form>
 
 
-    </div> <!-- /container -->
+            <h4 class="form-signin-heading">Nemate nalog?  <a href="/register">Registrujte se</a></h4>
 
-    <br>
 
-@endsection
+        </div> <!-- /container -->
+
+        <br>
+
+    @endsection
