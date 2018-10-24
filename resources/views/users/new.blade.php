@@ -20,7 +20,7 @@
         @include('layouts.partials.errors')
 
 
-        <form action="/store" method="post"  class="form-signin">
+        <form action="/store" method="post"  onsubmit="return validateMyForm()" class="form-signin">
 
             {{ csrf_field() }}
 
@@ -102,6 +102,11 @@
             <input type="password" name="password_confirmation" id="inputTitle" class="form-control" placeholder="Ponovi sifru" >
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
+            <script>
+                function validateMyForm() {
+                    console.log('Eve me!');
+                }
+            </script>
         </form>
 
     </div> <!-- /container -->
