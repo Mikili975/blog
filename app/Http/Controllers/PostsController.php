@@ -30,6 +30,8 @@ class PostsController extends Controller
     {
 
         $posts = Post::with(['comments.user', 'user'])->paginate(10)->sortByDesc('created_at');
+        //dd($posts);
+        //dd($comments);
 
         //Dovuci postove i za njih zalepi poslednji komentar za svaki post i usera koji ga je napisao
         //Pogledaj u dokumentaciji kako ces da resis
@@ -38,7 +40,7 @@ class PostsController extends Controller
 
         //namesti da prikazuje najnovije postove gore
 
-        //dd($posts);+
+        //dd($posts);
         // Promeni index view za postove tako da prikazuje  naslov, autora i poslednji komentar
 
 

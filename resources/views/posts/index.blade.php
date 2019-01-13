@@ -34,7 +34,7 @@
                     <p>Poslednji komentar... </p>
                     <p>{{$post->comments->last()->body}}</p>
                     <p>by <a href="/users/{{$post->comments->last()->user->name}}">{{$post->comments->last()->user->name}}</a></p>
-                </p>
+                
             </li>
 
         @endforeach

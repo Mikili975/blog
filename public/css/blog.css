@@ -9,6 +9,7 @@
 }
 
 body {
+    background-color: #d9d1c5;
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
 }
@@ -168,7 +169,6 @@ h6, .h6 {
 body {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;
 }
 
 .form-signin {
