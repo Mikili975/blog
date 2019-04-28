@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
 -- Host: localhost    Database: blog
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.17.04.1
+-- Server version	5.7.22-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `tags` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tags_name_unique` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `tags` (
 
 LOCK TABLES `tags` WRITE;
 /*!40000 ALTER TABLE `tags` DISABLE KEYS */;
-INSERT INTO `tags` VALUES (3,'tag1','2017-11-06 20:41:37','2017-11-06 20:41:37'),(21,'tag2','2017-11-07 13:04:22','2017-11-07 13:04:22'),(22,'tag3','2017-11-07 13:06:35','2017-11-07 13:06:35');
+INSERT INTO `tags` VALUES (1,'Blogging','2017-11-17 19:45:35','2017-11-17 19:45:35'),(2,'Freelancing','2017-11-17 19:45:35','2017-11-17 19:45:35'),(3,'How to Succeed','2017-11-17 19:45:35','2017-11-17 19:45:35'),(4,'Internet Marketing','2017-11-17 19:45:35','2017-11-17 19:45:35'),(5,'Miscellaneous','2017-11-17 19:45:35','2017-11-17 19:45:35');
 /*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-07 15:30:38
+-- Dump completed on 2018-05-22 22:12:27
