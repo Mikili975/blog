@@ -97,7 +97,7 @@ class PostsController extends Controller
 
         $post->addTags($newTags);
 
-        Mail::to($user)->send(new PostCreated($post));
+        // Mail::to($user)->send(new PostCreated($post));
 
         //redirektuj na taj novi post
         return redirect('/');
@@ -111,7 +111,7 @@ class PostsController extends Controller
         $comment = $post->addComment(request());
 
 
-        Mail::to($post->user)->send(new CommentsReceived($comment));
+        // Mail::to($post->user)->send(new CommentsReceived($comment));
 
         return redirect('/posts/'.$post->id);
         /*return redirect('/');*/
